@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import useInput from '../hooks/use-input';
 
 
@@ -43,7 +42,8 @@ const BasicForm = (props) => {
 	//form submission handler
 	const formSubmissionHandler = event => {
 		event.preventDefault()
-		if (firstNameInputHasError || lastNameInputHasError || emailHasError) {
+		
+		if (!formIsValid) {
 			return
 		}
 		console.log(enteredFirstName, enteredLastName, enteredEmail)
